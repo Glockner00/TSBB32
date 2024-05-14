@@ -2,10 +2,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 def g_a(t):
-    pass
+    return (8/25*(np.exp(-8*t)*(3*np.sin(6*t) - 4*np.cos(6*t)) + 4) + 7/54*np.exp(8)*(6*t*np.cos(6*t) - np.sin(6*t)))
 
 def g_b(t):
-    return (1 - np.exp(-10*t)- 8*t*np.exp(-10*t))
+    return (1 - np.exp(-10*t) - 8*t*np.exp(-10*t))
 
 def g_c(t):
     pass
@@ -13,7 +13,6 @@ def g_c(t):
 t_values = np.linspace(-10, 10, 1000)
 a_values = g_a(t_values)
 b_values = g_b(t_values)
-c_values = g_c(t_values)
 
 fig = plt.figure()
 ax = fig.add_subplot(1, 1, 1)
@@ -31,7 +30,6 @@ ax.yaxis.set_major_locator(plt.MultipleLocator(0.2))
 
 plt.plot(t_values, a_values , label="g_a(t)")
 plt.plot(t_values, b_values , label="g_b(t)")
-plt.plot(t_values, c_values , label="g_c(t)")
 
 plt.title('Stegsvar')
 plt.ylabel('g(t)(m)')
