@@ -1,13 +1,19 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+def g_a(t):
+    pass
 
 def g_b(t):
     return (1 - np.exp(-10*t)- 8*t*np.exp(-10*t))
 
-t_values = np.linspace(-10, 10, 1000)
-b_values = g_b(t_values)
+def g_c(t):
+    pass
 
+t_values = np.linspace(-10, 10, 1000)
+a_values = g_a(t_values)
+b_values = g_b(t_values)
+c_values = g_c(t_values)
 
 fig = plt.figure()
 ax = fig.add_subplot(1, 1, 1)
@@ -23,14 +29,16 @@ plt.ylim(0, 2)
 ax.xaxis.set_major_locator(plt.MultipleLocator(0.1))
 ax.yaxis.set_major_locator(plt.MultipleLocator(0.2))
 
-plt.title('Amplitudskar.')
+plt.plot(t_values, a_values , label="g_a(t)")
+plt.plot(t_values, b_values , label="g_b(t)")
+plt.plot(t_values, c_values , label="g_c(t)")
+
+plt.title('Stegsvar')
 plt.ylabel('g(t)(m)')
 plt.xlabel('Tid(s)')
-
-
-plt.plot(t_values, b_values , label="g_b(t)")
-
 plt.legend()
 plt.grid(True)
+
 plt.savefig("rapport/plots/images/stegsvar.png")
+
 plt.show()
