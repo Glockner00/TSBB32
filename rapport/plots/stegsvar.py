@@ -2,7 +2,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 def g_a(t):
-    return (8/25*(np.exp(-8*t)*(3*np.sin(6*t) - 4*np.cos(6*t)) + 4) + 7/54*np.exp(8)*(6*t*np.cos(6*t) - np.sin(6*t)))
+    term1 = (32 - 32*np.exp(-8*t) * np.cos(6*t) + 24*np.exp(-8*t) *np.sin(6*t))/25
+    term2 = -((21*np.exp(8*t) - 28*np.sin(6*t) - 21*np.cos(6*t))/(75*np.exp(8*t)))
+    return (term1 + term2)
 
 def g_b(t):
     return (1 - np.exp(-10*t) - 8*t*np.exp(-10*t))
