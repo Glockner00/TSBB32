@@ -2,9 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 def g_a(t):
-    term1 = (32 - 32*np.exp(-8*t) * np.cos(6*t) + 24*np.exp(-8*t) *np.sin(6*t))/25
-    term2 = -((21*np.exp(8*t) - 28*np.sin(6*t) - 21*np.cos(6*t))/(75*np.exp(8*t)))
-    return (term1 + term2)
+    return ((4/3)*np.exp(-8*t)*np.sin(6*t) - np.exp(-8*t)*np.cos(6*t) +1)
 
 def g_b(t):
     return (1 - np.exp(-10*t) - 8*t*np.exp(-10*t))
@@ -41,7 +39,5 @@ plt.ylabel('g(t)(m)')
 plt.xlabel('Tid(s)')
 plt.legend()
 plt.grid(True)
-
-plt.savefig("rapport/plots/images/stegsvar.png")
-
+plt.savefig("plots/images/stegsvar.png")
 plt.show()
