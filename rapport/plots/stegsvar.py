@@ -8,7 +8,7 @@ def g_b(t):
     return (1 - np.exp(-10*t) - 8*t*np.exp(-10*t))
 
 def g_c(t):
-    return ((24*np.exp(50*t) - 25 + np.exp(48*t))/(24*np.exp(50*t)))
+    return ((1/24)* (-24*np.exp(-50*t) + np.exp(-2*t) + 24))
 
 t_values = np.linspace(0, 100, 10000)
 a_values = g_a(t_values)
@@ -39,5 +39,5 @@ plt.ylabel('g(t)(m)')
 plt.xlabel('Tid(s)')
 plt.legend()
 plt.grid(True)
-plt.savefig("plots/images/stegsvar.png")
+plt.savefig("rapport/plots/images/stegsvar.png")
 plt.show()
